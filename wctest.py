@@ -43,6 +43,9 @@ def atari(candidates, n=1):
         candidates (list): list of tuple (index, name)
         n (int, optional): number of winners. Defaults to 1.
     """
+    if n > len(candidates):
+        print('Error: 최대 정원 수를 초과할 수 없습니다')
+        return
     atari_indices = []
     while len(atari_indices) < n:
         atari_index = random.randint(0, len(candidates))
